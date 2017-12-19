@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 
+// for any routes at /api/, use ./apiRoutes router
 router.use('/api', require('./apiRoutes'));
 
 router.get('*', (req, res) => {
