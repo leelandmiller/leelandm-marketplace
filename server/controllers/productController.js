@@ -14,7 +14,7 @@ module.exports = {
             'SearchIndex': 'Electronics',
             'ItemPage': i,
             'Keywords': 'laptop',
-            'ResponseGroup': 'Images,ItemAttributes'
+            'ResponseGroup': 'Images,ItemAttributes,Offers'
         });
     }
 }

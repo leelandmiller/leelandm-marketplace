@@ -4,6 +4,49 @@ body {
   font-family: sans-serif;
 }
 
+.bg-grey {
+    background-color: #e3e3e3;
+}
+
 .tile:hover {
     cursor: pointer;
+}
+
+.product-detail-page {
+    padding: 40px 120px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+}
+
+.product {
+    width: 500px;
+    margin: 0px 20px;
+}
+
+.more-details {
+    width: 400px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 820px) {
+    .product-detail-page {
+        padding: 10px 10px;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .product {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .more-details {
+        width: 100%;
+        margin-top: 20px;
+    }
 }

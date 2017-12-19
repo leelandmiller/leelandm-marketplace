@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import { GridList } from 'material-ui/GridList';
+import Product from './Product';
 
 class ProductList extends Component {
     styles = {
@@ -24,22 +22,8 @@ class ProductList extends Component {
 
         return (<div style={this.styles.root}>
             <GridList cellHeight={180} style={this.styles.gridList} cols={4}>
-                <Subheader>Laptops on Amazon</Subheader>
                 {
-                    this.props.items.map((tile, i) => (
-                        <GridTile
-                            onClick={() => console.log('click')}
-                            className='tile'
-                            key={i + '-' + tile.ASIN}
-                            title={tile.ItemAttributes.Title}
-                            subtitle={
-                                <span> by <b>{ tile.ItemAttributes.Brand }</b></span>
-                            }
-                            actionIcon={<IconButton> <StarBorder color = "white" /></IconButton>}>
-                                <img src={
-                                    tile.ImageSets.ImageSet[0] ? tile.ImageSets.ImageSet[0].LargeImage.URL : tile.ImageSets.ImageSet.LargeImage.URL}/>
-                        </GridTile>)
-                    )
+                    this.props.items.map((tile, i) => <Product tile={tile} i={i} key={i + '-' + tile.ASIN} />)
                 }
             </GridList>
         </div>);
